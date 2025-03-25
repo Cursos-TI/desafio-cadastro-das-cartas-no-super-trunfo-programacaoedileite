@@ -3,24 +3,30 @@
 
 int main() {
     // Definindo as variáveis para a primeira Carta.
-    int populacao1, turisticos1; // Variáveis para armazenar a população e pontos turísticos.
+    int turisticos1; // Variável para armazenar os pontos turísticos.
+    unsigned long int populacao1; // Variável para armazenar a população.
     float area1, pib1; // Variáveis para armazenar a área e o PIB.
     char estado1;  // Variável para armazenar o estado (um único caractere).
-    char codigo1[4];  // Variável para armazenar o código (3 caracteres + '\0').
+    char codigo1[5];  // Variável para armazenar o código (3 caracteres + '\0').
     char cidade1[50];  // Nome da cidade.
     //Definindo as variáveis para Densidade e PIB per Capita.
     float densidade1; // Variável para armazenar a Dencidade Populacional.
     float PibperCapita1; // Variável para armazenar o PIB per Capita.
+    float SuperPoder1; // Variável para armazenar o Super Poder.
+    float inversodensidade1; // Variável para armazenar o inverso da densidade;
 
     //Definindo as variáveis para a segunda Carta.
-    int populacao2, turisticos2; // Variáveis para armazenar a população e pontos turísticos.
+    int turisticos2; // Variável para armazenar os pontos turísticos.
+    unsigned long int populacao2; // Variável para armazenar a população.
     float area2, pib2; // Variáveis para armazenar a área e o PIB
     char estado2;  // Variável para armazenar o estado (um único caractere).
-    char codigo2[5];  // Variável para armazenar o código (3 caracteres + '\0').
+    char codigo2[3];  // Variável para armazenar o código (3 caracteres + '\0').
     char cidade2[50];  // Nome da cidade.
     //Definindo as variáveis para Densidade e PIB per Capita.
     float densidade2; // Variável para armazenar a Dencidade Populacional.
     float PibperCapita2; // Variável para armazenar o PIB per Capita.
+    float SuperPoder2; // Variável para armazenar o Super Poder.
+    float inversodensidade2; // Variável para armazenar o inverso da densidade;
 
     
     printf("*** Super Trunfo de Países ***\n\n");
@@ -50,6 +56,9 @@ int main() {
     densidade1 = populacao1 / area1; // Calculando a Densidade Populacional.
 
     PibperCapita1 = pib1 / populacao1; // Calculando o PIB per Capita.
+
+    //inversodensidade1 = densidade1 > densidade2;
+    //SuperPoder1 = ((float)populacao1 + area1 + pib1 + (float)turisticos1 + PibperCapita1 + inversodensidade1);
 
     // Exibição dos Dados da primeira Carta:
     printf("\nCarta 1:\n"); // Exibindo a Carta 1.
@@ -102,6 +111,23 @@ int main() {
     printf("Pontos turísticos: %d\n", turisticos2); // Exibindo os pontos turísticos.
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2); //Exibindo a densidade.
     printf("PIB per Capita: %.2f reais\n", PibperCapita2); // Exibindo o PIB per Capita.
+
+    // Calculando o inverso da densidade e o Super Poder de cada carta;
+    inversodensidade1 = densidade1 < densidade2; 
+    SuperPoder1 = ((float)populacao1 + area1 + pib1 + (float)turisticos1 + PibperCapita1 + inversodensidade1);
+
+    inversodensidade2 = densidade2 < densidade1;
+    SuperPoder2 = ((float)populacao2 + area2 + pib2 + (float)turisticos2 + PibperCapita2 + inversodensidade2);
+
+    // Exibido a Comparação das Cartas e mostrando qual venceu;
+    printf("Comparação de Cartas:\n");
+    printf("População: Carta 1 venceu: %d\n", populacao1 > populacao2);
+    printf("Área: Carta 1 venceu: %d\n", area1 > area2);
+    printf("PIB: Carta 1 venceu: %d\n", pib1 > pib2);
+    printf("Pontos turísticos: Carta 1 venceu: %d\n", turisticos1 > turisticos2);
+    printf("Densidade Populacional: Carta 2 venceu: %d\n", densidade1 < densidade2);
+    printf("PIB per Capita: Carta 1 venceu: %d\n", PibperCapita1 > PibperCapita2);
+    printf("Super Poder: Carta 1 venceu: %d\n", SuperPoder1 > SuperPoder2);
 
     return 0;
 }
