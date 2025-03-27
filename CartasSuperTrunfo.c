@@ -127,7 +127,13 @@ int main() {
     printf("Pontos turísticos: Carta 1 venceu: %d\n", turisticos1 > turisticos2);
     printf("Densidade Populacional: Carta 2 venceu: %d\n", densidade1 < densidade2);
     printf("PIB per Capita: Carta 1 venceu: %d\n", PibperCapita1 > PibperCapita2);
-    printf("Super Poder: Carta 1 venceu: %d\n", SuperPoder1 > SuperPoder2);
+    printf("Super Poder: Carta 1 venceu: %d\n\n", SuperPoder1 > SuperPoder2);
+
+    if(populacao1 > populacao2){
+        printf("Carta 1(São Paulo) venceu!\n");
+    } else {
+        printf("Carta 2 (Rio de Janeiro) venceu!\n");
+    }
 
     return 0;
 }
