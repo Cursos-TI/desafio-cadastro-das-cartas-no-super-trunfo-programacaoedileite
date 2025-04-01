@@ -28,6 +28,7 @@ int main() {
     float SuperPoder2; // Variável para armazenar o Super Poder.
     float inversodensidade2; // Variável para armazenar o inverso da densidade;
 
+    int ataque;
     
     printf("*** Super Trunfo de Países ***\n\n");
     // Cadastro da Carta 1:
@@ -110,7 +111,7 @@ int main() {
     printf("PIB: %.2f bilhões de reais\n", pib2); // Exibindo o PIB.
     printf("Pontos turísticos: %d\n", turisticos2); // Exibindo os pontos turísticos.
     printf("Densidade Populacional: %.2f hab/km²\n", densidade2); //Exibindo a densidade.
-    printf("PIB per Capita: %.2f reais\n", PibperCapita2); // Exibindo o PIB per Capita.
+    printf("PIB per Capita: %.2f reais\n\n", PibperCapita2); // Exibindo o PIB per Capita.
 
     // Calculando o inverso da densidade e o Super Poder de cada carta;
     inversodensidade1 = densidade1 < densidade2; 
@@ -130,10 +131,121 @@ int main() {
     printf("Super Poder: Carta 1 venceu: %d\n\n", SuperPoder1 > SuperPoder2);
 
     if(populacao1 > populacao2){
-        printf("Carta 1(São Paulo) venceu!\n");
-    } else {
-        printf("Carta 2 (Rio de Janeiro) venceu!\n");
+        printf("\nCarta 1(São Paulo) venceu!\n");
+    } else if (populacao1 < populacao2)
+    {
+        printf("\nCarta 2 (Rio de Janeiro), venceu!\n");
+    }
+      else
+    {
+        printf("\nHouve um empate!\n");
     }
 
+    printf("\n### SUPER TRUNFO ###\n");
+    printf("Ataques Disponíveis: \n");
+    printf("1. População\n");
+    printf("2. Área\n");
+    printf("3. PIB\n");
+    printf("4. Número de pontos turísticos\n");
+    printf("5. Densidade demográfica\n");
+    printf("Escolha um ataque: \n");
+    scanf("%d", &ataque);
+    
+    switch (ataque)
+    {
+    case 1:
+        printf("Ataque: População - \n");
+       if (populacao1 > populacao2)
+        {
+            printf("** CARTA 1 **\n");
+            printf("Cidade: %s\n", cidade1);
+            printf("População: %d\n", populacao1);
+            printf("** CARTA 2 **\n");
+            printf("Cidade: %s\n", cidade2);
+            printf("População: %d\n", populacao2);
+            printf("Carta 1 %s venceu!\n", cidade1);
+        } else if (populacao1 < populacao2)
+        {
+            printf("** CARTA 1 **\n");
+            printf("Cidade: %s\n", cidade1);
+            printf("População: %d\n", populacao1);
+            printf("** CARTA 2 **\n");
+            printf("Cidade: %s\n", cidade2);
+            printf("População: %d\n", populacao2);
+            printf("Carta 2 (Rio de Janeiro), venceu!\n");
+        }
+          else
+        {
+            printf("** CARTA 1 **\n");
+            printf("Cidade: %s\n", cidade1);
+            printf("População: %d\n", populacao1);
+            printf("** CARTA 2 **\n");
+            printf("Cidade: %s\n", cidade2);
+            printf("População: %d\n", populacao2);
+            printf("Houve um empate!\n");
+        }
+        break;
+        case 2:
+        printf("Ataque: Área - ");
+        if (area1 > area2)
+        {
+            printf("Carta 1(São Paulo) venceu!\n");
+        } else if (area1 < area2)
+        {
+            printf("Carta 2 (Rio de Janeiro), venceu!\n");
+        }
+          else
+        {
+            printf("Houve um empate!\n");
+        }
+        break;
+        case 3:
+        printf("Ataque: PIB - ");
+        if (pib1 > pib2)
+        {
+            printf("Carta 1(São Paulo) venceu!\n");
+        } else if (pib1 < pib2)
+        {
+            printf("Carta 2 (Rio de Janeiro), venceu!\n");
+        }
+          else
+        {
+            printf("Houve um empate!\n");
+        }
+        break;
+        case 4:
+        printf("Ataque: Número de pontos turísticos - ");
+        if (turisticos1 > turisticos2)
+        {
+            printf("Carta 1(São Paulo) venceu!\n");
+        } else if (turisticos1 < turisticos2)
+        {
+            printf("Carta 2 (Rio de Janeiro), venceu!\n");
+        }
+          else
+        {
+            printf("Houve um empate!\n");
+        }
+        break;
+        case 5:
+        printf("Ataque: Densidade demográfica - ");
+        if (densidade1 < densidade2)
+        {
+            printf("Carta 1(São Paulo) venceu!\n");
+        } else if (densidade1 > densidade2)
+        {
+            printf("Carta 2 (Rio de Janeiro), venceu!\n");
+        }
+          else
+        {
+            printf("Houve um empate!\n");
+        }
+        break;
+    default:
+        printf("Opção inválida!\n");
+        break;
+    }
+
+    
     return 0;
 }
